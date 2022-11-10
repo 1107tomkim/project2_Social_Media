@@ -1,5 +1,6 @@
 package dev.jsonmusk.repositories;
 
+import dev.jsonmusk.entities.Comment;
 import dev.jsonmusk.entities.Post;
 
 import java.util.List;

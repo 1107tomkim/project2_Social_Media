@@ -54,13 +54,29 @@
   <component name="RunManager" selected="Application.Driver">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.driver.Driver" />
-      <module name="P2_BAREBONES" />
+      <module name="p2_barebones" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="dev.jsonmusk.driver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConnectionTests.connection_available" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="p2_barebones" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.jsonmusk.smoketests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.jsonmusk.smoketests" />
+      <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.smoketests.ConnectionTests" />
+      <option name="METHOD_NAME" value="connection_available" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,22 +92,6 @@
       <option name="PACKAGE_NAME" value="dev.jsonmusk.daotests" />
       <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.daotests.PostDAOTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostDAOTests.get_request_by_id_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="P2_BAREBONES" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dev.jsonmusk.daotests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dev.jsonmusk.daotests" />
-      <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.daotests.PostDAOTests" />
-      <option name="METHOD_NAME" value="get_request_by_id_test" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,10 +130,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Driver" />
+        <item itemvalue="JUnit.ConnectionTests.connection_available" />
         <item itemvalue="JUnit.PostDAOTests" />
         <item itemvalue="JUnit.UserDAOTests" />
         <item itemvalue="JUnit.PostDAOTests.update_request_test" />
-        <item itemvalue="JUnit.PostDAOTests.get_request_by_id_test" />
       </list>
     </recent_temporary>
   </component>

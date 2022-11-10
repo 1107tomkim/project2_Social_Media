@@ -9,20 +9,24 @@ public class Comment {
     private Date date;
     private int parentId;
 
+    private int postId;
+
     public Comment() {
         this.id = 0;
         this.userId = 0;
         this.text = "";
         this.date = null;
         this.parentId = 0;
+        this.postId = 0;
     }
 
-    public Comment(int id, int userId, String text, Date date, int parentId) {
+    public Comment(int id, int userId, String text, Date date, int parentId, int postId) {
         this.id = id;
         this.userId = userId;
         this.text = text;
         this.date = date;
         this.parentId = parentId;
+        this.postId = postId;
     }
 
     public int getId() {
@@ -65,6 +69,15 @@ public class Comment {
         this.parentId = parentId;
     }
 
+    public int getPostId() {
+        return postId;
+    }
+
+    public void setPostId(int postId) {
+        this.postId = postId;
+    }
+
+
     @Override
     public String toString() {
         return "Comment{" +
@@ -73,6 +86,8 @@ public class Comment {
                 ", text='" + text + '\'' +
                 ", date=" + date +
                 ", parentId=" + parentId +
+                ", postId=" + postId +
                 '}';
     }
+
 }
