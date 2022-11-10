@@ -11,6 +11,7 @@ public interface UserDAO {
     User createUser(User user);
     //READ
     User getUserById(int id);
+    User getUserByUsername(String username);
 
     //UPDATE
     User updateUser(User user);

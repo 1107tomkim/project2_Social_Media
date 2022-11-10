@@ -1,5 +1,6 @@
 package dev.jsonmusk.repositories;
 
+import dev.jsonmusk.entities.Comment;
 import dev.jsonmusk.entities.Post;
 import dev.jsonmusk.util.ConnectionFactory;
 
@@ -20,6 +21,8 @@ public class PostDAOPostgres implements PostDAO {
         // select the post from db with corresponding id
         return null;
     }
+
+
 
     @Override
     public Post updatePost(Post post) {

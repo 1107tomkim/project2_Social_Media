@@ -9,13 +9,15 @@ public interface UserService {
 
     //CREATE
     User createUser(User user);
+
     //READ
     User getUserById(int id);
+    User getUserByUsername(String username);
 
     //UPDATE
     User updateUser(User user);
 
-    void login();
+    int login(String username, String password);
 
     void logout();
 

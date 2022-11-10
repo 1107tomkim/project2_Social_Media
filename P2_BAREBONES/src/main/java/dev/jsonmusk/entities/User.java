@@ -14,7 +14,7 @@ public class User {
     public User() {
 
     }
-    public User(int id, String username, String password, boolean isManager) {
+    public User(int id, String username, String password, boolean isLoggedIn) {
         this.id = id;
         this.username = username;
         this.password = password;

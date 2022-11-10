@@ -1,6 +1,7 @@
 package dev.jsonmusk.services;
 
 import dev.jsonmusk.driver.Driver;
+import dev.jsonmusk.entities.Comment;
 import dev.jsonmusk.entities.Post;
 import dev.jsonmusk.repositories.PostDAO;
 
