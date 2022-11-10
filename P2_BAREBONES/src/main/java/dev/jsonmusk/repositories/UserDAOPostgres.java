@@ -11,8 +11,29 @@ public class UserDAOPostgres implements UserDAO {
 
     @Override
     public User createUser(User user) {
-        // insert user into DB
-        return null;
+        try (Connection connection = ConnectionFactory.getConnection()){
+            //INSERT INTO users VALUES (DEFAULT, 'User1', 'password', 'George', 'Neilson', 'georgeyboy@office.net', FALSE);
+            String sql = "insert into usertest values(default, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, user.getUsername());
+            ps.setString(2, user.getPassword());
+            ps.setString(3, user.getFirstname());
+            ps.setString(4, user.getLastname());
+            ps.setString(5, user.getEmail());
+            ps.setBoolean(6, user.isLoggedIn());
+            ps.execute();
+            ResultSet rs = ps.getGeneratedKeys();
+            rs.next();
+
+            int generatedKey = rs.getInt("user_id");
+            user.setId(generatedKey);
+            return user;
+
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
@@ -25,7 +46,7 @@ public class UserDAOPostgres implements UserDAO {
     public User getUserByUsername(String username) {
         System.out.println("userdao: getUserByUsername");
         try (Connection connection = ConnectionFactory.getConnection()) {
-            String sql = "select * from users where username=?";
+            String sql = "select * from usertest where username=?";
             PreparedStatement ps = connection.prepareStatement(sql);
 
             ps.setString(1, username);
@@ -35,9 +56,9 @@ public class UserDAOPostgres implements UserDAO {
             User gottenUser = new User();
             gottenUser.setId(rs.getInt("user_id"));
             gottenUser.setUsername(rs.getString("username"));
-            gottenUser.setPassword(rs.getString("passwd"));
-            gottenUser.setFirstname(rs.getString("fname"));
-            gottenUser.setLastname(rs.getString("lname"));
+            gottenUser.setPassword(rs.getString("password"));
+            gottenUser.setFirstname(rs.getString("firstname"));
+            gottenUser.setLastname(rs.getString("lastname"));
             gottenUser.setEmail(rs.getString("email"));
             gottenUser.setLoggedIn(rs.getBoolean("isLogged"));
             System.out.println(gottenUser);
