@@ -40,12 +40,14 @@ public class UserServiceImpl implements UserService {
         if (checkUser != null) {
             if (checkUser.getPassword().equals(password)) {
                 returnval = 2;
+                checkUser.setLoggedIn(true);
             } else {
                 returnval = 1;
             }
         } else {
             returnval = 0;
         }
+        System.out.println(returnval);
         return returnval;
     }
 

@@ -37,6 +37,19 @@ public class Driver {
 
         // put app.get, etc. (routes) here
         app.post("/login", userController.loginHandler);
+
+
+        //Creating new users
+        app.post("/create", userController.createUserHandler);
+
+
+
+
+
+
+
+
+
         // go
         app.start();
 
