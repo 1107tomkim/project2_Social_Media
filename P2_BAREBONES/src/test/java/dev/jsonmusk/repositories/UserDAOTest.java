@@ -1,5 +1,7 @@
 package dev.jsonmusk.repositories;
 
+import dev.jsonmusk.entities.User;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
@@ -20,8 +22,14 @@ class UserDAOTest {
 ////        Assertions.assertEquals("chairs", savedRequest.getDescription());
 //    }
 
+    static UserDAO userDAO = new UserDAOPostgres();
+
     @Test
     void createUser() {
+        User testuser = new User(0, "testdood", "password", false);
+        User savedUser = userDAO.createUser(testuser);
+        Assertions.assertNotNull(savedUser);
+        Assertions.assertEquals(testuser.getUsername(), savedUser.getUsername());
     }
 
     @Test
@@ -43,4 +51,5 @@ class UserDAOTest {
     @Test
     void logout() {
     }
+
 }

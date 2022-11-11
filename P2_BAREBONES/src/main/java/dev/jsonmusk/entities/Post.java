@@ -5,56 +5,47 @@ import java.util.Date;
 
 public class Post {
 
-    // id, userid, caption, image, date
+    // id, userid, postText, postPhoto, date
 
-    private String caption;
+    private String postText;
 
 
-    private int id;
+    private int postId;
     private int userId;
 
 
     private Date date;
-    private byte[] image;
+    private byte[] postPhoto;
 
     public Post() {
-        this.caption = "";
-        this.id = 0;
-        this. userId = 0;
+        this.postText = "";
+        this.postId = 0;
+        this.userId = 0;
         this.date = null;
-        this.image = null;
+        this.postPhoto = null;
     }
-    public Post(int userId, int id, String caption, Date date, byte[] image) {
-        this.caption = caption;
-        this.id = id;
+    public Post(int userId, int postId, String postText, Date date, byte[] postPhoto) {
+        this.postText = postText;
+        this.postId = postId;
         this.userId = userId;
         this.date = null;
-        this.image = null;
+        this.postPhoto = null;
     }
 
-
-    public byte[] getImage() {
-        return image;
+    public String getPostText() {
+        return postText;
     }
 
-    public void setImage(byte[] image) {
-        this.image = image;
+    public void setPostText(String postText) {
+        this.postText = postText;
     }
 
-    public int getId() {
-        return id;
+    public int getPostId() {
+        return postId;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getCaption() {
-        return caption;
-    }
-
-    public void setCaption(String caption) {
-        this.caption = caption;
+    public void setPostId(int postId) {
+        this.postId = postId;
     }
 
     public int getUserId() {
@@ -73,17 +64,22 @@ public class Post {
         this.date = date;
     }
 
+    public byte[] getPostPhoto() {
+        return postPhoto;
+    }
+
+    public void setPostPhoto(byte[] postPhoto) {
+        this.postPhoto = postPhoto;
+    }
+
     @Override
     public String toString() {
         return "Post{" +
-                "caption='" + caption + '\'' +
-                ", id=" + id +
+                "postText='" + postText + '\'' +
+                ", postId=" + postId +
                 ", userId=" + userId +
                 ", date=" + date +
-                ", image(size)=" + image.length +
+                ", postPhoto=" + Arrays.toString(postPhoto) +
                 '}';
     }
-
-
-
 }
