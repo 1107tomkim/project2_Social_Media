@@ -44,7 +44,6 @@ public class UserDAOPostgres implements UserDAO {
 
     @Override
     public User getUserByUsername(String username) {
-        System.out.println("userdao: getUserByUsername");
         try (Connection connection = ConnectionFactory.getConnection()) {
             String sql = "select * from usertest where username=?";
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -61,7 +60,6 @@ public class UserDAOPostgres implements UserDAO {
             gottenUser.setLastname(rs.getString("lastname"));
             gottenUser.setEmail(rs.getString("email"));
             gottenUser.setLoggedIn(rs.getBoolean("isLogged"));
-            System.out.println(gottenUser);
             return gottenUser;
 
         } catch (SQLException e) {
@@ -74,11 +72,39 @@ public class UserDAOPostgres implements UserDAO {
     @Override
     public User updateUser(User user) {
         // take the user in parameter and update the corresponding user(id) in db
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            String sql = "update usertest set username = ?, password = ?, firstname = ?, lastname = ?, email = ?, islogged = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, user.getUsername());
+            ps.setString(2, user.getPassword());
+            ps.setString(3, user.getFirstname());
+            ps.setString(4, user.getLastname());
+            ps.setString(5, user.getEmail());
+            ps.setBoolean(6, user.isLoggedIn());
+
+            ps.executeUpdate();
+            return user;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
-
     @Override
-    public void login() {
+    public User updateUserLogin(User user) {
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            String sql = "update usertest set islogged = ? where user_id = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setBoolean(1, user.isLoggedIn());
+            ps.setInt(2, user.getId());
+
+            ps.executeUpdate();
+            return user;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
         //log in
     }
 

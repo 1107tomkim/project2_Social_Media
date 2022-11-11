@@ -16,7 +16,7 @@ public interface UserDAO {
     //UPDATE
     User updateUser(User user);
 
-    void login();
+    User updateUserLogin(User user);
 
     void logout();
 

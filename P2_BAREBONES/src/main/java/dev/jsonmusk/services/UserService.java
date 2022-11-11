@@ -19,7 +19,7 @@ public interface UserService {
 
     int login(String username, String password);
 
-    void logout();
+    int logout(String username, String password);
 
     //DELETE
 

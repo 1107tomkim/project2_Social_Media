@@ -15,7 +15,6 @@ public class UserController {
         User user = gson.fromJson(json, User.class);
 
         int returnval = Driver.userService.login(user.getUsername(), user.getPassword());
-        System.out.println("from the controller returnval = " + returnval);
         if (returnval == 2) {
             ctx.status(200);
             ctx.result("something is good " + returnval);
@@ -29,6 +28,25 @@ public class UserController {
             ctx.result("something is bad " + returnval);
         }
     };
+
+    public Handler logoutHandler = (ctx) -> {
+
+        String json = ctx.body();
+        Gson gson = new Gson();
+        User user = gson.fromJson(json, User.class);
+
+        int returnval = Driver.userService.logout(user.getUsername(), user.getPassword());
+        if (returnval == 2) {
+            ctx.status(200);
+            ctx.result("logged out");
+        }
+        else {
+            ctx.status(400);
+            ctx.result("Could not log out");
+        }
+    };
+
+
 
     public Handler createUserHandler = (ctx) -> {
         String json = ctx.body();
@@ -44,5 +62,7 @@ public class UserController {
             ctx.result("Account not created!");
         }
     };
+
+
 
 }
