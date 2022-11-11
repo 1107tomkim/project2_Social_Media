@@ -13,7 +13,7 @@ public class UserDAOPostgres implements UserDAO {
     public User createUser(User user) {
         try (Connection connection = ConnectionFactory.getConnection()){
             //INSERT INTO users VALUES (DEFAULT, 'User1', 'password', 'George', 'Neilson', 'georgeyboy@office.net', FALSE);
-            String sql = "insert into usertest values(default, ?, ?, ?, ?, ?, ?)";
+            String sql = "insert into users values(default, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
@@ -45,7 +45,7 @@ public class UserDAOPostgres implements UserDAO {
     @Override
     public User getUserByUsername(String username) {
         try (Connection connection = ConnectionFactory.getConnection()) {
-            String sql = "select * from usertest where username=?";
+            String sql = "select * from users where username=?";
             PreparedStatement ps = connection.prepareStatement(sql);
 
             ps.setString(1, username);
@@ -73,7 +73,7 @@ public class UserDAOPostgres implements UserDAO {
     public User updateUser(User user) {
         // take the user in parameter and update the corresponding user(id) in db
         try (Connection connection = ConnectionFactory.getConnection()) {
-            String sql = "update usertest set username = ?, password = ?, firstname = ?, lastname = ?, email = ?, islogged = ?";
+            String sql = "update users set username = ?, password = ?, firstname = ?, lastname = ?, email = ?, islogged = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
@@ -93,7 +93,7 @@ public class UserDAOPostgres implements UserDAO {
     @Override
     public User updateUserLogin(User user) {
         try (Connection connection = ConnectionFactory.getConnection()) {
-            String sql = "update usertest set islogged = ? where user_id = ?";
+            String sql = "update users set islogged = ? where user_id = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setBoolean(1, user.isLoggedIn());
             ps.setInt(2, user.getId());
