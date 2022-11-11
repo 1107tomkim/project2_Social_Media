@@ -61,34 +61,34 @@ public class User2RepositoryImpl implements User2Repository{
         }
        return null;
     }
-        //return user;
-
 
 
     @Override
     public Optional<User2> findByEmail(String email) {
-        Predicate<User2> query = user -> user.getEmail().equalsIgnoreCase(email);
-        return users.stream().filter(query).findFirst();
+        //Predicate<User2> query = user -> user.getEmail().equalsIgnoreCase(email);
+        try(Connection connection = ConnectionFactory.getConnection()){
+            String sql = "select * from users where email = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            // The class PreparedStatement has a method called prepareStatement (no d) that takes in a string
+            ps.setString(1, email);
+
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+
+            User2 users = new User2();
+            users.setUserId(rs.getString("userId"));
+            users.setEmail(rs.getString("email"));
+            users.setPassword(rs.getString("password"));
+
+            return Optional.of(users);
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("something went wrong checking the email");
+            return Optional.empty();
+        }
     }
-//    private List<User2> users;
-//
-//    public User2RepositoryImpl() {
-//        this.users = new ArrayList<>();
-//    }
-//
-//    @Override
-//    public User2 signup(String email, String password) {
-//        String userId = UUID.randomUUID().toString();
-//        User2 user = new User2(userId, email, password);
-//        users.add(user);
-//        return user;
-//
-//    }
-//
-//    @Override
-//    public Optional<User2> findByEmail(String email) {
-//        Predicate<User2> query = user -> user.getEmail().equalsIgnoreCase(email);
-//        return users.stream().filter(query).findFirst();
-//    }
+
 
 }
