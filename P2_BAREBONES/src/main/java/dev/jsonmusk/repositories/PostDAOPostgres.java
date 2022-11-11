@@ -13,7 +13,30 @@ public class PostDAOPostgres implements PostDAO {
     @Override
     public Post createPost(Post post) {
         // insert this new post into db
-        return null;
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            Timestamp newTimestamp = new Timestamp(System.currentTimeMillis());
+            String sql = "insert into posts values(default, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, post.getPostText());
+            ps.setInt(2, post.getUserId());
+            ps.setTimestamp(3, newTimestamp);
+            ps.setBytes(4, post.getPostPhoto());
+            // Temporarily set like and dislike values as 0 so we do not need to mess with the
+            // object for the time being.
+            ps.setInt(5, 0);
+            ps.setInt(6, 0);
+            ps.execute();
+            ResultSet rs = ps.getGeneratedKeys();
+            rs.next();
+
+            post.setPostId(rs.getInt("post_id"));
+            return post;
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override

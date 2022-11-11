@@ -6,19 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="14540ac6-6f96-48b1-8cfd-c0859667aace" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;ERS_Project/.idea/workspace.xml&#10;#&#9;ERS_Project/src/main/java/dev/hammet/controllers/EmployeeController.java&#10;#&#9;ERS_Project/src/main/java/dev/hammet/controllers/ReimbursementRequestController.java&#10;#&#9;ERS_Project/src/main/java/dev/hammet/repositories/EmployeeDAOPostgres.java&#10;#&#9;ERS_Project/target/classes/dev/hammet/controllers/EmployeeController.class&#10;#&#9;ERS_Project/target/classes/dev/hammet/controllers/ReimbursementRequestController.class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/driver/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/driver/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/repositories/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/repositories/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/controllers/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/entities/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/entities/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/repositories/PostDAOPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/repositories/PostDAOPostgres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/repositories/UserDAOPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/repositories/UserDAOPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/services/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dev/jsonmusk/daotests/UserDAOTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/driver/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/driver/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/repositories/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/repositories/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dev/jsonmusk/daotests/PostDAOTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dev/jsonmusk/repositories/UserDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dev/jsonmusk/repositories/UserDAOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/repositories/UserDAOPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/repositories/UserDAOPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/services/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dev/jsonmusk/daotests/PostDAOTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dev/jsonmusk/daotests/UserDAOTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +73,7 @@
       <recent name="dev.jsonmusk.repositories" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Driver">
+  <component name="RunManager" selected="JUnit.PostDAOTest.createPost">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.driver.Driver" />
       <module name="P2_BAREBONES" />
@@ -123,43 +119,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostDAOTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PostDAOTest.createPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="P2_BAREBONES" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dev.jsonmusk.daotests.*" />
+          <option name="PATTERN" value="dev.jsonmusk.repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dev.jsonmusk.daotests" />
-      <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.daotests.PostDAOTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="dev.jsonmusk.repositories" />
+      <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.repositories.PostDAOTest" />
+      <option name="METHOD_NAME" value="createPost" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDAOTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserDAOTest.createUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="P2_BAREBONES" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dev.jsonmusk.daotests.*" />
+          <option name="PATTERN" value="dev.jsonmusk.repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dev.jsonmusk.daotests" />
-      <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.daotests.UserDAOTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="dev.jsonmusk.repositories" />
+      <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.repositories.UserDAOTest" />
+      <option name="METHOD_NAME" value="createUser" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PostDAOTest.createPost" />
         <item itemvalue="Application.Driver" />
+        <item itemvalue="JUnit.UserDAOTest.createUser" />
         <item itemvalue="JUnit.ConnectionTests.connection_available (1)" />
         <item itemvalue="JUnit.ConnectionTests.connection_available" />
-        <item itemvalue="JUnit.PostDAOTests" />
-        <item itemvalue="JUnit.UserDAOTests" />
       </list>
     </recent_temporary>
   </component>
