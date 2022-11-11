@@ -41,6 +41,7 @@ public class UserServiceImpl implements UserService {
             if (checkUser.getPassword().equals(password)) {
                 returnval = 2;
                 checkUser.setLoggedIn(true);
+                User loggedInUser = this.userDAO.updateUserLogin(checkUser);
             } else {
                 returnval = 1;
             }
@@ -52,7 +53,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void logout() {
-
+    public int logout(String username, String password) {
+        int returnval = 0;
+        User checkUser = Driver.userService.getUserByUsername(username);
+        if (checkUser != null) {
+            checkUser.setLoggedIn(false);
+            User loggedInUser = this.userDAO.updateUserLogin(checkUser);
+            returnval = 2;
+        }
+        else {
+            returnval = 1;
+        }
+        return returnval;
     }
+
 }

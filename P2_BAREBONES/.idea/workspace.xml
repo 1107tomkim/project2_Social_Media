@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14540ac6-6f96-48b1-8cfd-c0859667aace" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;ERS_Project/.idea/workspace.xml&#10;#&#9;ERS_Project/src/main/java/dev/hammet/controllers/EmployeeController.java&#10;#&#9;ERS_Project/src/main/java/dev/hammet/controllers/ReimbursementRequestController.java&#10;#&#9;ERS_Project/src/main/java/dev/hammet/repositories/EmployeeDAOPostgres.java&#10;#&#9;ERS_Project/target/classes/dev/hammet/controllers/EmployeeController.class&#10;#&#9;ERS_Project/target/classes/dev/hammet/controllers/ReimbursementRequestController.class" />
+    <list default="true" id="14540ac6-6f96-48b1-8cfd-c0859667aace" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;ERS_Project/.idea/workspace.xml&#10;#&#9;ERS_Project/src/main/java/dev/hammet/controllers/EmployeeController.java&#10;#&#9;ERS_Project/src/main/java/dev/hammet/controllers/ReimbursementRequestController.java&#10;#&#9;ERS_Project/src/main/java/dev/hammet/repositories/EmployeeDAOPostgres.java&#10;#&#9;ERS_Project/target/classes/dev/hammet/controllers/EmployeeController.class&#10;#&#9;ERS_Project/target/classes/dev/hammet/controllers/ReimbursementRequestController.class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/driver/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/driver/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/repositories/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/repositories/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/repositories/UserDAOPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/repositories/UserDAOPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jsonmusk/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dev/jsonmusk/daotests/UserDAOTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/driver/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/driver/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/repositories/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/repositories/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/repositories/UserDAOPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/repositories/UserDAOPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dev/jsonmusk/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dev/jsonmusk/services/UserServiceImpl.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +30,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -42,25 +58,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="dev.jsonmusk.repositories" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Driver">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.driver.Driver" />
-      <module name="p2_barebones" />
+      <module name="P2_BAREBONES" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="dev.jsonmusk.driver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConnectionTests.connection_available (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="P2_BAREBONES" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.jsonmusk.smoketests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.jsonmusk.smoketests" />
+      <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.smoketests.ConnectionTests" />
+      <option name="METHOD_NAME" value="connection_available" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -96,22 +138,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostDAOTests.update_request_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="P2_BAREBONES" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dev.jsonmusk.daotests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dev.jsonmusk.daotests" />
-      <option name="MAIN_CLASS_NAME" value="dev.jsonmusk.daotests.PostDAOTests" />
-      <option name="METHOD_NAME" value="update_request_test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserDAOTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="P2_BAREBONES" />
       <extension name="coverage">
@@ -130,10 +156,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Driver" />
+        <item itemvalue="JUnit.ConnectionTests.connection_available (1)" />
         <item itemvalue="JUnit.ConnectionTests.connection_available" />
         <item itemvalue="JUnit.PostDAOTests" />
         <item itemvalue="JUnit.UserDAOTests" />
-        <item itemvalue="JUnit.PostDAOTests.update_request_test" />
       </list>
     </recent_temporary>
   </component>
