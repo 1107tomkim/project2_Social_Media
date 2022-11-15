@@ -35,16 +35,56 @@ public class PostDAOPostgres implements PostDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
+            return null;
     }
 
     @Override
     public Post getPostById(int id) {
         // select the post from db with corresponding id
+        try(Connection connection = ConnectionFactory.getConnection()){
+            String sql = "select * from posts where post_id = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            Post post = new Post();
+            post.setPostText(rs.getString("post_text"));
+            post.setPostId(id);
+            post.setUserId(rs.getInt("createdby"));
+            post.setDate(rs.getTimestamp("date_created"));
+            post.setPostPhoto(rs.getBytes("post_photo"));
+            return post;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
         return null;
     }
 
+    @Override
+    public List<Post> getFeed() {
+        try(Connection connection = ConnectionFactory.getConnection()){
+            String sql = "select * from posts order by date_created";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            List<Post> feed = new ArrayList<>();
+            while(rs.next()){
+                Post post = new Post();
+                post.setPostText(rs.getString("post_text"));
+                post.setPostId(rs.getInt("post_id"));
+                post.setUserId(rs.getInt("createdby"));
+                post.setDate(rs.getTimestamp("date_created"));
+                post.setPostPhoto(rs.getBytes("post_photo"));
+                feed.add(post);
+            }
+            return feed;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
     @Override

@@ -25,6 +25,11 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
+    public List<Post> getFeed() {
+        return this.postDAO.getFeed();
+    }
+
+    @Override
     public Post updatePost(Post post) {
         return this.postDAO.updatePost(post);
     }

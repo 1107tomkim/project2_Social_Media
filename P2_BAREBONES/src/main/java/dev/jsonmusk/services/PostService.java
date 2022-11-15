@@ -14,6 +14,7 @@ public interface PostService {
     //READ
     Post getPostById(int id);
 
+    List<Post> getFeed();
 
     //UPDATE
     Post updatePost(Post post);

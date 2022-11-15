@@ -41,8 +41,12 @@ public class Driver {
 
         //Creating new users
         app.post("/create", userController.createUserHandler);
-
         app.post("/logout", userController.logoutHandler);
+
+
+        //Post Path
+        app.get("/post/{post_id}", postController.getPostbyIdHandler);
+
 
 
 

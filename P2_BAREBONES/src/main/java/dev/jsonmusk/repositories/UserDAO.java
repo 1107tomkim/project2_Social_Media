@@ -8,8 +8,12 @@ import java.util.List;
 public interface UserDAO {
 
     //CREATE
+
+    // Used to create user
     User createUser(User user);
     //READ
+
+    // Used to get user by their id ( In the Database)
     User getUserById(int id);
     User getUserByUsername(String username);
 
