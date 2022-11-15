@@ -1,5 +1,6 @@
 package dev.jsonmusk.entities;
 
+import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -14,7 +15,7 @@ public class Post {
     private int userId;
 
 
-    private Date date;
+    private Timestamp date;
     private byte[] postPhoto;
 
     public Post() {
@@ -24,12 +25,20 @@ public class Post {
         this.date = null;
         this.postPhoto = null;
     }
-    public Post(int userId, int postId, String postText, Date date, byte[] postPhoto) {
+    public Post(int userId, int postId, String postText, Timestamp date, byte[] postPhoto) {
         this.postText = postText;
         this.postId = postId;
         this.userId = userId;
         this.date = null;
         this.postPhoto = null;
+    }
+
+    public void setDate(Timestamp date) {
+        this.date = date;
+    }
+
+    public Timestamp getDate() {
+        return date;
     }
 
     public String getPostText() {
@@ -56,13 +65,7 @@ public class Post {
         this.userId = userId;
     }
 
-    public Date getDate() {
-        return date;
-    }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
     public byte[] getPostPhoto() {
         return postPhoto;
